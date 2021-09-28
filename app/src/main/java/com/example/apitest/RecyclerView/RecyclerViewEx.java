@@ -64,6 +64,7 @@ public class RecyclerViewEx extends AppCompatActivity {
                     Collections.swap(modelRecData, fromPosition, toPosition);
                     recyclerView.getAdapter().notifyItemMoved(fromPosition, toPosition);
                     return false;
+
             }
 
             @Override
