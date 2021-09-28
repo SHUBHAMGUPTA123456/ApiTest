@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.apitest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name=".Emoji.EmojiApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.APITest"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ChartBar.ChartStackBarActivity"
+            android:exported="true" />
+        <activity android:name=".Image.ImageWithRetrofit" />
+        <activity android:name=".UploadDoc.ViewFileActivity" />
+        <activity android:name=".UploadDoc.UploadDocument" />
+        <activity android:name=".ShareOption.ShareIntent" />
+        <activity android:name=".CardStack.CardStack" />
+        <activity android:name=".RecyclerView.RecyclerViewEx" />
+        <activity android:name=".MultiRecyclerView.MainActivity" />
+        <activity
+            android:name=".Emoji.ShowEmoji"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Calendar.CalendarCustom" />
+        <activity android:name=".Video.VideoShow" />
+        <activity android:name=".CollapsingTool.CollapseTool" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".MultiImg.CropIntentActivity" />
+        <activity android:name=".MultiImg.EditSaveUploadImg" />
+        <activity android:name=".MultiImg.ShowMultiImage" />
+        <activity android:name=".MultiImg.ImageEditor" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorActivity" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorStickerActivity" />
+        <activity
+            android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorTextActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorDrawActivity" />
+        <activity android:name="com.dsphotoeditor.sdk.activity.DsPhotoEditorCropActivity" />
+        <activity android:name=".MultiImg.UploadImage" />
+        <activity
+            android:name=".Qr.EmailActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Qr.ScannedBarcodeActivity" />
+        <activity android:name=".Qr.QrCodeScanner" />
+        <activity android:name=".Button.ButtonExample" />
+        <activity android:name=".Map.MapActivity" />
+        <activity android:name=".DataBindExample" />
+        <activity android:name=".SQLite_" />
+        <activity android:name=".Login.Login" />
+        <activity android:name=".Login.RegisterPage" />
+        <activity android:name=".All_Item" />
+        <activity android:name=".MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

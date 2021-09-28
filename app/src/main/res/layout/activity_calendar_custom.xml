@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Calendar.CalendarCustom">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"/>
+    <org.naishadhparmar.zcustomcalendar.CustomCalendar
+        android:id="@+id/custom_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:day_of_week_length="1"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/toolBar"
+        app:day_of_week_start_from="sunday"
+        app:month_year_format="full_month__with_year"
+        app:row_height="50dp"
+        app:left_button_src="@drawable/ic_keyboard_arrow_left_black_24dp"
+        app:right_button_src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+</LinearLayout>

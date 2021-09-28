@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/jobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Ui Developer"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/cmpnyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:text="Aara Technologies Pvt Ltd"/>
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text="Lucknow"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/icon_location" />
+        <TextView
+            android:id="@+id/exp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="3-5 Year"
+            android:gravity="center_vertical"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/icon_location" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:text="UI Developer, HTML, CSS, Angular"
+            android:gravity="center_vertical"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/icon_location" />
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn_with_sixteen_dp"
+            android:text="Apply"
+            android:textSize="14sp"
+            android:backgroundTint="@color/accent_dark"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="end"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

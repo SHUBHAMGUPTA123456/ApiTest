@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent"
+      android:id="@+id/appBar"
+      android:theme="@style/Theme.APITest"
+      android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        app:title="Menu Page"
+        app:titleTextColor="@color/white"
+        android:layout_height="?actionBarSize"/>
+  </com.google.android.material.appbar.AppBarLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Popup Menu"
+      android:id="@+id/txtP"
+      android:layout_marginTop="24dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_alignParentTop="true"/>
+  <Button
+      android:id="@+id/showPopup"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Show Menu"
+      android:layout_below="@id/txtP"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_marginBottom="24dp"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Context Menu"
+      android:id="@+id/txtC"
+      android:layout_marginTop="4dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_below="@id/showPopup"/>
+  <ListView
+      android:layout_width="368dp"
+      android:layout_height="495dp"
+      android:id="@+id/showContext"
+      android:layout_marginEnd="24dp"
+      android:layout_below="@id/txtC"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="8dp" />
+  <ImageButton
+      android:id="@+id/menuBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/menu_icon"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="16dp"/>
+</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
