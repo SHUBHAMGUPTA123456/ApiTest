@@ -3,20 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/activity_all__item.xml" value="0.2561556791104051" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/activity_chart_stack_bar.xml" value="0.2905405405405405" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/activity_image_editor.xml" value="0.2905405405405405" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/activity_map.xml" value="0.2905405405405405" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/activity_menu.xml" value="0.2328888888888889" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/horizontal_single_row.xml" value="0.2328888888888889" />
-        <entry key="..\:/Shubham/AndroidPrjoect/APITest/app/src/main/res/layout/recycler_three.xml" value="0.2328888888888889" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/circular_progress_bar.xml" value="0.3081081081081081" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/progress_circular_background.xml" value="0.3081081081081081" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/ring_progress_bar.xml" value="0.3081081081081081" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_all__item.xml" value="0.329417773237998" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_calendar_custom.xml" value="0.28565101860053144" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_chart_stack_bar.xml" value="0.329417773237998" />
+        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_pie_chart.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="15" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

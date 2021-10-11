@@ -25,6 +25,9 @@
         android:theme="@style/Theme.APITest"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ChartBar.PieChartActivity"
+            android:exported="true" />
+        <activity
             android:name=".ChartBar.ChartStackBarActivity"
             android:exported="true" />
         <activity android:name=".Image.ImageWithRetrofit" />

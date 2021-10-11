@@ -19,13 +19,6 @@ import java.util.ArrayList;
 
 public class ChartStackBarActivity extends AppCompatActivity {
     ActivityChartStackBarBinding binding;
-    BarData barData;
-
-    // variable for our bar data set.
-    BarDataSet barDataSet;
-
-    // array list for storing entries.
-    ArrayList barEntriesArrayList;
 
     private static final int MAX_X_VALUE = 5;
     private static final int MAX_Y_VALUE = 50;
@@ -91,7 +84,7 @@ public class ChartStackBarActivity extends AppCompatActivity {
     }
     private void myTool() {
         binding.toolBar.setNavigationIcon(R.drawable.icon_btn_back);
-        binding.toolBar.setTitle("Chart Baar");
+        binding.toolBar.setTitle("Chart Bar");
         binding.toolBar.setNavigationOnClickListener(v -> {
             onBackPressed();
         });
