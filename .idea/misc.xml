@@ -3,17 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/circular_progress_bar.xml" value="0.3081081081081081" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/progress_circular_background.xml" value="0.3081081081081081" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/drawable/ring_progress_bar.xml" value="0.3081081081081081" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_all__item.xml" value="0.329417773237998" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_calendar_custom.xml" value="0.28565101860053144" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_chart_stack_bar.xml" value="0.329417773237998" />
-        <entry key="..\:/Shubham/AndroidPrjoect/ApiTest/app/src/main/res/layout/activity_pie_chart.xml" value="0.25" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_all__item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_date_picker_and_calendar.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

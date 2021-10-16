@@ -15,6 +15,7 @@ import com.example.apitest.CardStack.CardStack;
 import com.example.apitest.ChartBar.ChartStackBarActivity;
 import com.example.apitest.ChartBar.PieChartActivity;
 import com.example.apitest.CollapsingTool.CollapseTool;
+import com.example.apitest.DatePickerAndCalendar.DatePickerAndCalendar;
 import com.example.apitest.Emoji.ShowEmoji;
 import com.example.apitest.Image.ImageWithRetrofit;
 import com.example.apitest.Login.Login;
@@ -35,7 +36,7 @@ public class All_Item extends AppCompatActivity {
     LinearLayout sqLite,menuPage,loginSec,dataBindSec,mapSection,btnSection,qrSection,imgUpload,imgEditor,showMultiImg,
             editSaveImg,cropIntent,collapseTool,showVdo,showCalendar,emojiSection,recSection,cardStack,uploadFile,shareIntent,
             uploadImage,multiRecyclerView;
-    TextView goToChartBar,goToPieChart;
+    TextView goToChartBar,goToPieChart,goToDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,6 +151,10 @@ public class All_Item extends AppCompatActivity {
             startActivity(new Intent(this, PieChartActivity.class));
             finish();
         });
+        goToDate.setOnClickListener(v -> {
+            startActivity(new Intent(this, DatePickerAndCalendar.class));
+            finish();
+        });
     }
     private void initVar() {
         sqLite = findViewById(R.id.sqLite);
@@ -176,6 +181,7 @@ public class All_Item extends AppCompatActivity {
         multiRecyclerView = findViewById(R.id.multiRecyclerView);
         goToChartBar = findViewById(R.id.goToChartBar);
         goToPieChart = findViewById(R.id.goToPieChart);
+        goToDate = findViewById(R.id.goToDate);
     }
     private void myToolbar() {
         Toolbar toolBar = findViewById(R.id.toolBar);
