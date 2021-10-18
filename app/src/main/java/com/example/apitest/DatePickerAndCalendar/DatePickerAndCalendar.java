@@ -4,15 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.DatePicker;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.example.apitest.R;
 import com.example.apitest.databinding.ActivityDatePickerAndCalendarBinding;
 
 import java.util.Calendar;
@@ -21,42 +15,35 @@ public class DatePickerAndCalendar extends AppCompatActivity {
     ActivityDatePickerAndCalendarBinding binding;
     private DatePicker datePicker;
     private Calendar calendar;
-    private TextView dateView,endDateTxt;
     private int year, month, day;
+    int startYear,startMonth,startDay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDatePickerAndCalendarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        dateView = (TextView) findViewById(R.id.textView3);
-        endDateTxt = findViewById(R.id.endDateTxt);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
-
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);
+        showEndDate(year, month+1, day);
+        binding.startDate.setOnClickListener(v -> {
+            showDialog(999);
+        });
+        binding.endDateTxt.setOnClickListener(v -> {
+            showDialog(998);
+        });
     }
-    @SuppressWarnings("deprecation")
-    public void setDate(View view) {
-        showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
-                Toast.LENGTH_SHORT)
-                .show();
-    }
-    @SuppressWarnings("deprecation")
-    public void setEndDate(View view) {
-        showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
-                Toast.LENGTH_SHORT)
-                .show();
-    }
+
     @Override
     protected Dialog onCreateDialog(int id) {
-        // TODO Auto-generated method stub
         if (id == 999) {
             return new DatePickerDialog(this,
                     myDateListener, year, month, day);
+        }else if (id == 998){
+            return new DatePickerDialog(this,
+                    myDateListenerO, year, month, day);
         }
         return null;
     }
@@ -66,21 +53,42 @@ public class DatePickerAndCalendar extends AppCompatActivity {
                 @Override
                 public void onDateSet(DatePicker arg0,
                                       int arg1, int arg2, int arg3) {
-                    // TODO Auto-generated method stub
-                    // arg1 = year
-                    // arg2 = month
-                    // arg3 = day
                     showDate(arg1, arg2+1, arg3);
-                    showEndDate(arg1, arg2+1, arg3);
                 }
             };
 
     private void showDate(int year, int month, int day) {
-        dateView.setText(new StringBuilder().append(day).append("/")
+        binding.startDate.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
+        startYear = year;
+        startMonth = month;
+        startDay = day;
     }
+    private DatePickerDialog.OnDateSetListener myDateListenerO = new
+            DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker arg0,
+                                      int arg1, int arg2, int arg3) {
+                    showEndDate(arg1, arg2+1, arg3);
+                }
+            };
     private void showEndDate(int year, int month, int day) {
-        endDateTxt.setText(new StringBuilder().append(day).append("/")
-                .append(month).append("/").append(year));
+       if (year>= startYear){
+            if (month>=startMonth){
+                if (day>=startDay){
+                    binding.endDateTxt.setText(new StringBuilder().append(day).append("/")
+                            .append(month).append("/").append(year));
+                }else {
+                    Toast.makeText(getApplicationContext(), "Choose Correct Day", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Choose Correct Month", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Choose Correct Year", Toast.LENGTH_SHORT).show();
+        }
     }
 }
