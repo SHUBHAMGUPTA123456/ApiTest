@@ -5,6 +5,17 @@
       <map>
         <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_all__item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_date_picker_and_calendar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_qr_code_scanner.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_register_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_s_q_lite_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_scanned_barcode.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_show_emoji.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_upload_document.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_upload_image.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/activity_video_show.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/ApiTest/app/src/main/res/layout/dialog_for_filter.xml" value="0.20092592592592592" />
       </map>
     </option>
   </component>

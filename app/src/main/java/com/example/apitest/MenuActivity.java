@@ -1,7 +1,11 @@
 package com.example.apitest;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,21 +15,29 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Calendar;
 
 public class MenuActivity extends AppCompatActivity {
     Button showPopup;
     ListView showContext;
     ImageButton menuBtn;
     String contacts[] = {"Ajay", "Sachin", "Sumit", "Tarun", "Yogesh"};
+    Button openCustomDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +45,7 @@ public class MenuActivity extends AppCompatActivity {
         showPopup = findViewById(R.id.showPopup);
         showContext = findViewById(R.id.showContext);
         menuBtn = findViewById(R.id.menuBtn);
+        openCustomDialog = findViewById(R.id.openCustomDialog);
         //for Popup Menu
         showPopup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +69,40 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this,All_Item.class));
             }
+        });
+        //On MainActivity Page
+        Button openCustomDialog=findViewById(R.id.openCustomDialog);
+        openCustomDialog.setOnClickListener(v -> {
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialog_for_filter);
+            Window window = dialog.getWindow();
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            dialog.setCancelable(false);
+            dialog.show();
+            ImageView exitDialog=dialog.findViewById(R.id.exitDialog);
+            TextView fromDate=dialog.findViewById(R.id.fromDate);
+            TextView dateToDoList=dialog.findViewById(R.id.dateToDoList);
+            Button applyDate=dialog.findViewById(R.id.applyDate);
+            fromDate.setOnClickListener(v1 -> {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog mdiDialog = new DatePickerDialog(MenuActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        fromDate.setText(monthOfYear + 1 + "/" + dayOfMonth + "/" + year);
+                    }
+                }, year, month, day);
+                mdiDialog.show();
+            });
+            applyDate.setOnClickListener(v1 -> {
+                dialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Handle Your Action !", Toast.LENGTH_SHORT).show();
+            });
+            exitDialog.setOnClickListener(v1 -> {
+                dialog.dismiss();
+            });
         });
     }
     @Override
