@@ -71,4 +71,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.mancj:MaterialSearchBar:0.8.1'
+    implementation 'com.shantanudeshmukh:linkedinsdk:1.0.0'
 }

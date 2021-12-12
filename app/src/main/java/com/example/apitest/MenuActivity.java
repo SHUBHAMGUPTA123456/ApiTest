@@ -1,5 +1,6 @@
 package com.example.apitest;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AlertDialogLayout;
@@ -9,6 +10,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
@@ -28,16 +30,22 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shantanudeshmukh.linkedinsdk.LinkedInBuilder;
+import com.shantanudeshmukh.linkedinsdk.helpers.LinkedInUser;
+import com.shantanudeshmukh.linkedinsdk.helpers.OnBasicProfileListener;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Calendar;
 
 public class MenuActivity extends AppCompatActivity {
-    Button showPopup;
+    Button showPopup, getLoginInfo;
     ListView showContext;
     ImageButton menuBtn;
     String contacts[] = {"Ajay", "Sachin", "Sumit", "Tarun", "Yogesh"};
-    Button openCustomDialog;
+    Button openCustomDialog,btnLoginWithLinkedIn;
+    private String accessToken;
+    private long accessTokenExpiry;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +53,17 @@ public class MenuActivity extends AppCompatActivity {
         showPopup = findViewById(R.id.showPopup);
         showContext = findViewById(R.id.showContext);
         menuBtn = findViewById(R.id.menuBtn);
+        btnLoginWithLinkedIn = findViewById(R.id.btnLoginWithLinkedIn);
         openCustomDialog = findViewById(R.id.openCustomDialog);
+        getLoginInfo = findViewById(R.id.getLoginInfo);
+
+        btnLoginWithLinkedIn.setOnClickListener(v -> {
+            LinkedInBuilder.getInstance(MenuActivity.this)
+                    .setClientID("778thctjqegu7n")
+                    .setClientSecret("aRSgUV9XmLuYNT67")
+                    .setRedirectURI("https://www.javatpoint.com/")
+                    .authenticate(21);
+        });
         //for Popup Menu
         showPopup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +122,43 @@ public class MenuActivity extends AppCompatActivity {
                 dialog.dismiss();
             });
         });
+        getLoginInfo.setOnClickListener(v -> {
+            LinkedInBuilder.retrieveBasicProfile(accessToken, accessTokenExpiry, new OnBasicProfileListener() {
+                @Override
+                public void onDataRetrievalStart() {
+
+                }
+
+                @Override
+                public void onDataSuccess(LinkedInUser user) {
+                    setUserData(user);
+                }
+
+                @Override
+                public void onDataFailed(int errCode, String errMessage) {
+
+                    Toast.makeText(MenuActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
     }
+    private void setUserData(LinkedInUser user) {
+        accessToken = user.getAccessToken();
+        accessTokenExpiry = user.getAccessTokenExpiry();
+
+        Log.wtf("LINKEDIN ID", user.getId());
+
+//        tvFName.setText(user.getFirstName());
+//        tvLName.setText(user.getLastName());
+//        tvEmail.setText(user.getEmail());
+
+        Toast.makeText(getApplicationContext(), user.getFirstName()+" "+
+                user.getLastName()+", "+user.getEmail(), Toast.LENGTH_SHORT).show();
+//        if(user.getProfileUrl()!= null && !user.getProfileUrl().isEmpty()){
+//            new ImageLoadTask(user.getProfileUrl(), ivUserPic).execute();
+//        }
+    }
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -185,5 +239,31 @@ public class MenuActivity extends AppCompatActivity {
         } catch (Throwable e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 21 && data != null) {
+            if (resultCode == RESULT_OK) {
+                //Successfully signed in
+                LinkedInUser user = data.getParcelableExtra("social_login");
+
+                //acessing user info
+                Log.i("LinkedInLogin", user.getFirstName());
+
+            } else {
+
+                if (data.getIntExtra("err_code", 0) == LinkedInBuilder.ERROR_USER_DENIED) {
+                    //Handle : user denied access to account
+
+                } else if (data.getIntExtra("err_code", 0) == LinkedInBuilder.ERROR_FAILED) {
+
+                    //Handle : Error in API : see logcat output for details
+                    Log.e("LINKEDIN ERROR", data.getStringExtra("err_message"));
+                }
+            }
+        }
+
     }
 }
