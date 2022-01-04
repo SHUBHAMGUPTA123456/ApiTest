@@ -39,6 +39,7 @@ import java.lang.reflect.Method;
 import java.util.Calendar;
 
 public class MenuActivity extends AppCompatActivity {
+    //https://github.com/shantanu-deshmukh/LinkedIn-SDK-Android/tree/master/app/src/main/res/values
     Button showPopup, getLoginInfo;
     ListView showContext;
     ImageButton menuBtn;
